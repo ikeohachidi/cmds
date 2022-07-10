@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -21,8 +23,12 @@ func main() {
 	}
 
 	for _, dir := range dirs {
-		printOut += fmt.Sprintf("%v   ", dir.Name())
+		if dir.IsDir() {
+			printOut += fmt.Sprintf("%s ", color.CyanString(dir.Name()))
+		} else {
+			printOut += fmt.Sprintf("%s  ", dir.Name())
+		}
 	}
 
-	log.Print(printOut)
+	fmt.Println(printOut)
 }
