@@ -5,7 +5,7 @@ Rewriting some linux commands in go
 Just for practice.
 
 #### Done
-- [ ] ls
+- [x] ls
 - [ ] pwd
 - [ ] cp
 - [ ] mv
