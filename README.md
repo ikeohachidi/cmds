@@ -6,11 +6,11 @@ Just for practice.
 
 #### Done
 - [x] ls
-- [ ] pwd
-- [ ] cp
+- [x] pwd
+- [x] cp
 - [ ] mv
 - [ ] rm
-- [ ] mkdir
+- [x] mkdir
 - [ ] tail
 - [ ] head
 - [ ] touch
