@@ -11,14 +11,16 @@ func main() {
 	args := os.Args[1:]
 
 	for _, file := range args {
-		// this implementation is underwhelming yes
-		// but hey, I at least read the implementation
-		// of os.Remove and os.RemoveAll before using
-		// it so that's progress.
+		// we're not going to use os.RemoveAll
+		// although it also recursively deletes 
+		// content too
 		rm(file)
 	}
 }
 
+// rm will recursively delete all contents
+// of a folder before deleting the folder itself
+// os.Remove will not delete a folder with content
 func rm(path string) error {
 	fileInfo, err := os.Stat(path)
 	if err != nil {
