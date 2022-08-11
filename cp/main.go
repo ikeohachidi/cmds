@@ -38,11 +38,9 @@ func dirCopy(source string, dest string) error {
 	}
 
 	for _, file := range dirEntry {
-		var (
-			s string = source+"/"+file.Name()
-			d string = dest+"/"+file.Name()
-		)
-		
+		s := source+"/"+file.Name()
+		d := dest+"/"+file.Name()
+
 		if (file.IsDir()) {
 			if err := dirCopy(s, d); err != nil {
 				return err
