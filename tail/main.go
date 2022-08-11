@@ -36,10 +36,12 @@ func main() {
 	}
 
 	buf := bytes.NewBuffer(fileData)
-	if buf.Len() < *lines {
-		log.Fatal("file not long enough to read tail")
-	}
-	fileLines := strings.Split(buf.String(), "\n")[*lines:]
+	fileLines := strings.Split(buf.String(), "\n")
 
-	fmt.Println(strings.Join(fileLines, "\n"))
+	if len(fileLines) < *lines {
+		fmt.Println(buf.String())
+		return
+	}
+
+	fmt.Println(strings.Join(fileLines[*lines:], "\n"))
 }
